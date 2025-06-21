@@ -691,6 +691,7 @@ var mxUtils =
 	 */
 	getPrettyXml: function(node, tab, indent)
 	{
+		console.log("getPrettyXml");
 		var result = [];
 		
 		if (node != null)
