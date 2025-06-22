@@ -400,6 +400,7 @@ mxCodec.prototype.encode = function(obj)
  */
 mxCodec.prototype.decode = function(node, into)
 {
+	console.log("window", window);
 	var obj = null;
 	
 	if (node != null && node.nodeType == mxConstants.NODETYPE_ELEMENT)
@@ -419,6 +420,8 @@ mxCodec.prototype.decode = function(node, into)
 		
 		if (dec != null)
 		{
+			//alert("ctor:",ctor);
+			console.log(node.nodeName,"ctor:",ctor);
 			obj = dec.decode(this, node, into);
 		}
 		else

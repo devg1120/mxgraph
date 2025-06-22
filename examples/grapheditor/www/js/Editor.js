@@ -468,10 +468,14 @@ Editor.prototype.readGraphState = function(node)
  */
 Editor.prototype.setGraphXml = function(node)
 {
+        console.log("Editor.prototype.setGraphXml");
+
 	if (node != null)
 	{
 		var dec = new mxCodec(node.ownerDocument);
-	
+   	        console.log("dec");
+   	        console.log(dec);
+
 		if (node.nodeName == 'mxGraphModel')
 		{
 			this.graph.model.beginUpdate();

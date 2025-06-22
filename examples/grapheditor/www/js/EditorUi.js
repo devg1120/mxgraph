@@ -2191,8 +2191,20 @@ EditorUi.prototype.onBeforeUnload = function()
 /**
  * Opens the current diagram via the window.opener if one exists.
  */
+
+
 EditorUi.prototype.open = function()
 {
+
+var a = [];
+for (var i in window) {
+  if (window[i] === window) {
+    a.push(i);
+  }
+}
+
+console.log(a.join(', '));
+
 	// Cross-domain window access is not allowed in FF, so if we
 	// were opened from another domain then this will fail.
 	try
@@ -2203,7 +2215,9 @@ EditorUi.prototype.open = function()
 			{
 				try
 				{
+					console.log("open")
 					var doc = mxUtils.parseXml(xml); 
+					console.log(doc)
 					this.editor.setGraphXml(doc.documentElement);
 					this.editor.setModified(false);
 					this.editor.undoManager.clear();
